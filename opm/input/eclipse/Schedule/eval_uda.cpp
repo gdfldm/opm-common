@@ -38,7 +38,7 @@ namespace UDA {
     const std::string& string_var = value.get<std::string>();
     double output_value = udq_default;
 
-    if (st.has_well_var(well, value.get<std::string>()))
+    if (st.has_well_var(well, string_var))
         output_value = st.get_well_var(well, string_var);
     else if (st.has(string_var))
         output_value = st.get(string_var);
@@ -67,7 +67,7 @@ double eval_group_uda(const UDAValue& value, const std::string& group, const Sum
     const std::string& string_var = value.get<std::string>();
     double output_value = udq_undefined;
 
-    if (st.has_group_var(group, value.get<std::string>()))
+    if (st.has_group_var(group, string_var))
         output_value = st.get_group_var(group, string_var);
     else if (st.has(string_var))
         output_value = st.get(string_var);
